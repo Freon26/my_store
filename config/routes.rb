@@ -60,4 +60,5 @@ MyStore::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  break if ARGV.join.include? 'assets:precompile'
 end
