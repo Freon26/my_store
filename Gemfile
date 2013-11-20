@@ -31,7 +31,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+#gem 'jquery-rails', '~> 2.0'
+gem 'jquery-rails' 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -65,3 +66,11 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 #gem 'spree_multi_seller'
 
 gem 'spree_fancy', :git => 'git://github.com/spree/spree_fancy.git', :branch => '2-1-stable'
+
+gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-1-stable'
+
+#gem 'spree_human_checkout', :git => 'git://github.com/wuboy0307/spree_human_checkout.git', :branch => 'spree-2-0-stable'
+
+#gem 'spree', '2.0.3'
+#gem 'spree_gateway'#, :git => 'https://github.com/spree/spree_gateway.git', #'~> 2.0.3'
+#gem 'spree_auth_devise'#, :git => 'https://github.com/spree/spree_auth_devise.git', #'~> 2.0.3'
