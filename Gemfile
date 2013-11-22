@@ -65,7 +65,7 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 
 #gem 'spree_multi_seller'
 
-gem 'spree_fancy', :git => 'git://github.com/spree/spree_fancy.git', :branch => '2-1-stable'
+#gem 'spree_fancy', :git => 'git://github.com/spree/spree_fancy.git', :branch => '2-1-stable'
 
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-1-stable'
 
