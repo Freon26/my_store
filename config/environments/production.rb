@@ -77,6 +77,4 @@ MyStore::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
-
-  config.assets.precompile += %w( store/shared/_print.css )
 end
