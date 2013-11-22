@@ -5,6 +5,7 @@ gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+#gem 'rails', '3.2.13'
 
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
@@ -30,7 +31,8 @@ gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+#gem 'jquery-rails', '~> 2.0'
+gem 'jquery-rails' 
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
@@ -57,6 +59,14 @@ end
 
 gem 'money', '~> 5.1.1'
 
-gem 'spree', '2.1.2'
+gem 'spree', '2.1.3'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
+
+#gem 'spree_multi_seller'
+
+gem 'spree_fancy', :git => 'git://github.com/spree/spree_fancy.git', :branch => '2-1-stable'
+
+#gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-1-stable'
+
+#gem 'spree_human_checkout', :git => 'git://github.com/wuboy0307/spree_human_checkout.git', :branch => 'spree-2-0-stable'
