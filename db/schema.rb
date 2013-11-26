@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126021548) do
+ActiveRecord::Schema.define(version: 20131125022322) do
 
   create_table "spree_activators", force: true do |t|
     t.string   "description"
@@ -87,18 +87,6 @@ ActiveRecord::Schema.define(version: 20131126021548) do
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
 
-  create_table "spree_authors", force: true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.text     "bio"
-    t.text     "permalink",       null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-    t.text     "seo_description"
-  end
-
-  add_index "spree_authors", ["permalink"], name: "index_spree_authors_on_permalink"
-
   create_table "spree_calculators", force: true do |t|
     t.string   "type"
     t.integer  "calculable_id"
@@ -106,16 +94,6 @@ ActiveRecord::Schema.define(version: 20131126021548) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "spree_categories", force: true do |t|
-    t.string   "name",        null: false
-    t.string   "permalink",   null: false
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  add_index "spree_categories", ["permalink"], name: "index_spree_categories_on_permalink"
 
   create_table "spree_configurations", force: true do |t|
     t.string   "name"
@@ -322,47 +300,6 @@ ActiveRecord::Schema.define(version: 20131126021548) do
   end
 
   add_index "spree_payments", ["order_id"], name: "index_spree_payments_on_order_id"
-
-  create_table "spree_post_relations", force: true do |t|
-    t.integer  "post_id",    null: false
-    t.integer  "related_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "spree_post_relations", ["post_id"], name: "index_spree_post_relations_on_post_id"
-  add_index "spree_post_relations", ["related_id"], name: "index_spree_post_relations_on_related_id"
-
-  create_table "spree_posts", force: true do |t|
-    t.string   "title",                                       null: false
-    t.string   "permalink",                                   null: false
-    t.string   "seo_title"
-    t.text     "seo_description"
-    t.text     "abstract"
-    t.text     "body",                                        null: false
-    t.integer  "category_id",                                 null: false
-    t.integer  "author_id",                                   null: false
-    t.boolean  "sticky",                      default: false, null: false
-    t.boolean  "visible",                     default: false, null: false
-    t.datetime "published_at",                                null: false
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
-    t.string   "featured_image_file_name"
-    t.string   "featured_image_content_type"
-    t.integer  "featured_image_file_size"
-    t.datetime "featured_image_updated_at"
-  end
-
-  add_index "spree_posts", ["author_id"], name: "index_spree_posts_on_author_id"
-  add_index "spree_posts", ["category_id"], name: "index_spree_posts_on_category_id"
-
-  create_table "spree_posts_tags", force: true do |t|
-    t.integer "post_id", null: false
-    t.integer "tag_id",  null: false
-  end
-
-  add_index "spree_posts_tags", ["post_id"], name: "index_spree_posts_tags_on_post_id"
-  add_index "spree_posts_tags", ["tag_id"], name: "index_spree_posts_tags_on_tag_id"
 
   create_table "spree_preferences", force: true do |t|
     t.text     "value"
@@ -668,15 +605,6 @@ ActiveRecord::Schema.define(version: 20131126021548) do
   add_index "spree_stock_transfers", ["destination_location_id"], name: "index_spree_stock_transfers_on_destination_location_id"
   add_index "spree_stock_transfers", ["number"], name: "index_spree_stock_transfers_on_number"
   add_index "spree_stock_transfers", ["source_location_id"], name: "index_spree_stock_transfers_on_source_location_id"
-
-  create_table "spree_tags", force: true do |t|
-    t.string  "name",                        null: false
-    t.string  "permalink",                   null: false
-    t.text    "description"
-    t.boolean "trending",    default: false, null: false
-  end
-
-  add_index "spree_tags", ["permalink"], name: "index_spree_tags_on_permalink"
 
   create_table "spree_tax_categories", force: true do |t|
     t.string   "name"
