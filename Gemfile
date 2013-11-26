@@ -71,6 +71,10 @@ gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => 
 
 #gem 'spree_human_checkout', :git => 'git://github.com/wuboy0307/spree_human_checkout.git', :branch => 'spree-2-0-stable'
 
-#gem 'spree', '2.0.3'
-#gem 'spree_gateway'#, :git => 'https://github.com/spree/spree_gateway.git', #'~> 2.0.3'
-#gem 'spree_auth_devise'#, :git => 'https://github.com/spree/spree_auth_devise.git', #'~> 2.0.3'
+gem 'spree_reviews', github: 'spree/spree_reviews', :branch => '2-1-stable'
+
+gem 'spree_blog', :path => 'C:\RailsInstaller\Projects\spree_blog-2-1-stable' #:github => 'Freon26/spree_blog-2-1-stable'  #:github => 'cantierecreativo/spree_blog'
+
+#gem 'spree_simple_blog'
+
+#gem 'spree_ulti_blog', :github => 'Ultimaker/spree_ulti_blog'
