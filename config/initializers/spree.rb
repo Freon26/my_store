@@ -6,8 +6,6 @@
 # In order to initialize a setting do:
 # config.setting_name = 'new value'
 
-:multiline => true 
-
 Spree.config do |config|
   # Example:
   # Uncomment to override the default site name.
