@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 ruby '1.9.3'
+
 gem 'rails_12factor', group: :production
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -45,30 +46,13 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
-
-gem 'money', '~> 5.1.1'
-
 gem 'spree', '2.1.2'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
 
-#gem 'spree_multi_seller'
-
 gem 'spree_fancy', :git => 'git://github.com/spree/spree_fancy.git', :branch => '2-1-stable'
-
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-1-stable'
-
-#gem 'spree_human_checkout', :git => 'git://github.com/wuboy0307/spree_human_checkout.git', :branch => 'spree-2-0-stable'
-
 gem 'spree_reviews', github: 'spree/spree_reviews', :branch => '2-1-stable'
+gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git', :branch => '2-1-stable'
+gem 'spree_email_to_friend', :git => 'git://github.com/spree/spree_email_to_friend.git', :branch => '2-1-stable'
+gem 'spree_social', :git => 'git://github.com/spree/spree_social.git', :branch => '2-1-stable'

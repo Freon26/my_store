@@ -10,6 +10,8 @@ Spree.config do |config|
   # Uncomment to override the default site name.
   # config.site_name = "Spree Demo Site"
 
+  config.logo = "admin/bg/spree_50.png"
+
   config.use_s3 = true
   config.s3_bucket = 'mohan26'
   config.s3_access_key = "AKIAIZ572R7S5WSX65TA"
