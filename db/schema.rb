@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122090254) do
+ActiveRecord::Schema.define(version: 20131202233913) do
 
   create_table "spree_activators", force: true do |t|
     t.string   "description"
@@ -87,6 +87,16 @@ ActiveRecord::Schema.define(version: 20131122090254) do
   add_index "spree_assets", ["viewable_id"], name: "index_assets_on_viewable_id"
   add_index "spree_assets", ["viewable_type", "type"], name: "index_assets_on_viewable_type_and_type"
 
+  create_table "spree_authentication_methods", force: true do |t|
+    t.string   "environment"
+    t.string   "provider"
+    t.string   "api_key"
+    t.string   "api_secret"
+    t.boolean  "active"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_calculators", force: true do |t|
     t.string   "type"
     t.integer  "calculable_id"
@@ -127,6 +137,19 @@ ActiveRecord::Schema.define(version: 20131122090254) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "spree_feedback_reviews", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "review_id",                 null: false
+    t.integer  "rating",     default: 0
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "locale",     default: "en"
+  end
+
+  add_index "spree_feedback_reviews", ["review_id"], name: "index_spree_feedback_reviews_on_review_id"
+  add_index "spree_feedback_reviews", ["user_id"], name: "index_spree_feedback_reviews_on_user_id"
 
   create_table "spree_gateways", force: true do |t|
     t.string   "type"
@@ -324,7 +347,7 @@ ActiveRecord::Schema.define(version: 20131122090254) do
   add_index "spree_product_properties", ["product_id"], name: "index_product_properties_on_product_id"
 
   create_table "spree_products", force: true do |t|
-    t.string   "name",                 default: "", null: false
+    t.string   "name",                                         default: "",  null: false
     t.text     "description"
     t.datetime "available_on"
     t.datetime "deleted_at"
@@ -335,6 +358,8 @@ ActiveRecord::Schema.define(version: 20131122090254) do
     t.integer  "shipping_category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.decimal  "avg_rating",           precision: 7, scale: 5, default: 0.0, null: false
+    t.integer  "reviews_count",                                default: 0,   null: false
   end
 
   add_index "spree_products", ["available_on"], name: "index_spree_products_on_available_on"
@@ -418,6 +443,21 @@ ActiveRecord::Schema.define(version: 20131122090254) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "stock_location_id"
+  end
+
+  create_table "spree_reviews", force: true do |t|
+    t.integer  "product_id"
+    t.string   "name"
+    t.string   "location"
+    t.integer  "rating"
+    t.text     "title"
+    t.text     "review"
+    t.boolean  "approved",   default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.string   "ip_address"
+    t.string   "locale",     default: "en"
   end
 
   create_table "spree_roles", force: true do |t|
@@ -647,6 +687,14 @@ ActiveRecord::Schema.define(version: 20131122090254) do
     t.datetime "updated_at"
   end
 
+  create_table "spree_user_authentications", force: true do |t|
+    t.integer  "user_id"
+    t.string   "provider"
+    t.string   "uid"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "spree_users", force: true do |t|
     t.string   "encrypted_password",     limit: 128
     t.string   "password_salt",          limit: 128
@@ -694,6 +742,24 @@ ActiveRecord::Schema.define(version: 20131122090254) do
 
   add_index "spree_variants", ["product_id"], name: "index_spree_variants_on_product_id"
   add_index "spree_variants", ["sku"], name: "index_spree_variants_on_sku"
+
+  create_table "spree_wished_products", force: true do |t|
+    t.integer  "variant_id"
+    t.integer  "wishlist_id"
+    t.text     "remark"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "spree_wishlists", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "access_hash"
+    t.boolean  "is_private",  default: true,  null: false
+    t.boolean  "is_default",  default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spree_zone_members", force: true do |t|
     t.integer  "zoneable_id"
