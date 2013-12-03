@@ -52,7 +52,7 @@ gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git
 
 gem 'spree_fancy', :git => 'git://github.com/spree/spree_fancy.git', :branch => '2-1-stable'
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-1-stable'
-gem 'spree_reviews', github: 'spree/spree_reviews', :branch => '2-1-stable'
+#gem 'spree_reviews', github: 'spree/spree_reviews', :branch => '2-1-stable'
 #gem 'spree_wishlist', :git => 'git://github.com/spree/spree_wishlist.git', :branch => '2-1-stable'
 #gem 'spree_email_to_friend', :git => 'git://github.com/spree/spree_email_to_friend.git', :branch => '2-1-stable'
 #gem 'spree_social', :git => 'git://github.com/spree/spree_social.git'#, :branch => '2-1-stable'
