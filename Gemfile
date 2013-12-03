@@ -46,7 +46,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-gem 'spree', '2.1.2'
+gem 'spree', :branch => '2-1-stable'
 gem 'spree_gateway', :git => 'https://github.com/spree/spree_gateway.git', :branch => '2-1-stable'
 gem 'spree_auth_devise', :git => 'https://github.com/spree/spree_auth_devise.git', :branch => '2-1-stable'
 
@@ -54,4 +54,4 @@ gem 'spree_fancy', :git => 'git://github.com/spree/spree_fancy.git', :branch => 
 gem 'spree_static_content', :github => 'spree/spree_static_content', :branch => '2-1-stable'
 gem 'spree_reviews', github: 'spree/spree_reviews', :branch => '2-1-stable'
 
-gem 'spree_blogging_spree', :github => 'stefansenk/spree-blogging-spree'
+#gem 'spree_blogging_spree', :github => 'stefansenk/spree-blogging-spree'

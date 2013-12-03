@@ -169,8 +169,6 @@ GEM
       i18n (~> 0.6.0)
     multi_json (1.8.2)
     multi_xml (0.5.5)
-    nokogiri (1.6.0)
-      mini_portile (~> 0.5.0)
     nokogiri (1.6.0-x86-mingw32)
       mini_portile (~> 0.5.0)
     nori (1.1.5)
@@ -334,7 +332,7 @@ DEPENDENCIES
   rails_12factor
   sass-rails (~> 4.0.0)
   sdoc
-  spree (= 2.1.2)
+  spree
   spree_auth_devise!
   spree_fancy!
   spree_gateway!
