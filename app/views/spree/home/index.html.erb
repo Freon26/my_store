@@ -27,7 +27,7 @@
 
   <% if @latest_products %>
     <div id="latest-products" class="row">
-      <h3>Latest Products</h3>
+      <h3>Looking For</h3>
       <hr>
       <ul class="carousel">
         <% @latest_products.sort_by{ |product| product.created_at }.reverse.each do |product| %>
