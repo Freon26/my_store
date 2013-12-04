@@ -11,4 +11,3 @@
 
 //= require_tree .
 //= require store/spree_fancy
-//= require jquery.rating
