@@ -5,23 +5,17 @@
 <div id="welcome-message">
   <div class="container">
     <h1>
-        <a href="/service">Sell and Advertise</a> your Products here!
-    </h1>
-    <br>
-    <iframe width="560" height="315" src="//www.youtube.com/embed/n6dX_TEOfN4" frameborder="0" allowfullscreen></iframe>
-    <br>
-    <h2>
-      Tired of getting <strong>SCAMMED</strong> with your money or being <strong>ROBBED</strong> on meetups?
+      Welcome to our amazing store!
       <br>
-      Choose the best <a href="/products">swak offers</a> from our list of <a href="/sellers">legit sellers</a> verified by us!
-    </h2>
+      Choose <a href="/products">anything</a> you wish, we’ll ship it <a href="/products">anywhere!</a>
+    </h1>
   </div>
 </div>
 
 <div class="container">
   <% if @featured_products %>
     <div id="featured-products" class="row">
-      <h3>Featured Sellers</h3>
+      <h3>Featured Products</h3>
       <hr>
       <ul class="carousel">
         <% @featured_products.each do |product| %>
@@ -33,7 +27,7 @@
 
   <% if @latest_products %>
     <div id="latest-products" class="row">
-      <h3>Looking For</h3>
+      <h3>Latest Products</h3>
       <hr>
       <ul class="carousel">
         <% @latest_products.sort_by{ |product| product.created_at }.reverse.each do |product| %>
